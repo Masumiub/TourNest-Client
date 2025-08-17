@@ -11,6 +11,7 @@ import './Navbar.css'
 import { TbLogout } from "react-icons/tb";
 import { RiDashboard3Line } from "react-icons/ri";
 import Swal from 'sweetalert2';
+import { MdNotes } from 'react-icons/md';
 
 
 const Navbar = () => {
@@ -87,7 +88,7 @@ const Navbar = () => {
                         <li><NavLink to='/allTrips'><SlPlane /> Trips</NavLink></li>
                         <li> <NavLink to='/community'><RiGroupLine /> Community</NavLink> </li>
                         <li><NavLink to='/aboutUs'><IoPersonOutline /> About us</NavLink></li>
-                         <li><NavLink to='/Conditions'>Conditions</NavLink></li>
+                         <li><NavLink to='/Conditions'><MdNotes />Conditions</NavLink></li>
 
                     </ul>
                 </div>
