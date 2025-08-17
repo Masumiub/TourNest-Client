@@ -75,6 +75,7 @@ const Navbar = () => {
                             <li> <NavLink to='/community'>Community</NavLink> </li>
                             <li><NavLink to='/aboutUs'>About us</NavLink></li>
                             <li><NavLink to='/allTrips'>Trips</NavLink></li>
+                             <li><NavLink to='/Conditions'>Conditions</NavLink></li>
                         </ul>
                     </div>
                     <Link to='/' className="ml-2"> <img src={logo} alt="logo" className='w-12' /></Link>
@@ -86,6 +87,7 @@ const Navbar = () => {
                         <li><NavLink to='/allTrips'><SlPlane /> Trips</NavLink></li>
                         <li> <NavLink to='/community'><RiGroupLine /> Community</NavLink> </li>
                         <li><NavLink to='/aboutUs'><IoPersonOutline /> About us</NavLink></li>
+                         <li><NavLink to='/Conditions'>Conditions</NavLink></li>
 
                     </ul>
                 </div>

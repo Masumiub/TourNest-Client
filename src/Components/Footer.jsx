@@ -50,7 +50,7 @@ const Footer = () => {
                 <nav>
                     <h6 className="footer-title">General</h6>
                     <NavLink to='/aboutUs'>Our Team</NavLink> 
-                    <a className="link link-hover">Terms & conditions</a>
+                    <NavLink to='/Conditions' className="link link-hover">Terms & conditions</NavLink>
                     <NavLink to='/aboutUs'>Contact Us</NavLink> 
                     
                 </nav>
