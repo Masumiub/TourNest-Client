@@ -35,6 +35,7 @@ import Loading from "../Components/Loading";
 import StoryDetails from "../Pages/StoryDetails/StoryDetails";
 import OverviewAdmin from "../Pages/Dashboard/Overview/OverviewAdmin";
 import OverviewUser from "../Pages/Dashboard/Overview/OverviewUser";
+import OverviewGuide from "../Pages/Dashboard/Overview/OverviewGuide";
 
 const router = createBrowserRouter([
     {
@@ -121,6 +122,10 @@ const router = createBrowserRouter([
             {
                 path: 'OverviewUser',
                 element: <OverviewUser></OverviewUser>
+            },
+            {
+                path: 'OverviewGuide',
+                element: <GuideRoute><OverviewGuide></OverviewGuide></GuideRoute>
             },
             {
                 path: 'OverviewAdmin',

@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/AuthContext/AuthContext';
 import logo from '../assets/logo.png'
 import useUserRole from '../hooks/useUserRole';
 import Swal from 'sweetalert2';
-
+import { FaUser, FaBook, FaClipboardList, FaUserPlus, FaPen, FaFolderOpen, FaChartBar, FaTasks, FaBoxOpen, FaUsers, FaUserCheck, FaHome, FaSignOutAlt } from "react-icons/fa";
 
 const DashboardLayout = () => {
 
@@ -108,12 +108,38 @@ const DashboardLayout = () => {
 
                     {/* <li><NavLink to='/dashboard' className='mt-10'>Dashboard</NavLink></li> */}
 
-                    <li><NavLink to='/dashboard' className='mt-10'>Manage Profile</NavLink></li>
+                    <li>
+                        <NavLink to='/dashboard' className='mt-10'>
+                            <div className="flex flex-row items-center gap-2">
+                                <FaUser /> Manage Profile
+                            </div>
+                        </NavLink>
+                    </li>
+
                     {
                         !roleLoading && role == 'user' &&
                         <>
-                            <li><NavLink to='myBookings'>My Bookings</NavLink></li>
-                            <li><NavLink to='joinAsTourGuide'>Join As Tour Guide</NavLink></li>
+                            <li>
+                                <NavLink to='OverviewUser'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaChartBar /> Overview
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='myBookings'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaBook /> My Bookings
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='joinAsTourGuide'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaUserPlus /> Join As Tour Guide
+                                    </div>
+                                </NavLink>
+                            </li>
                         </>
                     }
 
@@ -121,8 +147,21 @@ const DashboardLayout = () => {
                     {
                         !roleLoading && (role == 'user' || role == 'guide') &&
                         <>
-                            <li><NavLink to='addStories'>Add Stories</NavLink></li>
-                            <li><NavLink to='manageStories'>Manage Stories</NavLink></li>
+
+                            <li>
+                                <NavLink to='addStories'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaPen /> Add Stories
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='manageStories'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaFolderOpen /> Manage Stories
+                                    </div>
+                                </NavLink>
+                            </li>
                         </>
                     }
 
@@ -130,22 +169,72 @@ const DashboardLayout = () => {
                     {
                         !roleLoading && role == 'guide' &&
                         <>
-                            <li><NavLink to='myAssignedTours'>My Assigned Tours</NavLink></li>
+                            <li>
+                                <NavLink to='OverviewGuide'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaChartBar /> Overview
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='myAssignedTours'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaTasks /> My Assigned Tours
+                                    </div>
+                                </NavLink>
+                            </li>
                         </>
                     }
 
                     {
                         !roleLoading && role == 'admin' &&
                         <>
-                            <li><NavLink to='addPackage'>Add Package</NavLink></li>
-                            <li><NavLink to='manageUsers'>Manage Users</NavLink></li>
-                            <li><NavLink to='manageCandidates'>Manage Candidates</NavLink></li>
+                            <li>
+                                <NavLink to='OverviewAdmin'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaChartBar /> Overview
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='addPackage'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaBoxOpen /> Add Package
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='manageUsers'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaUsers /> Manage Users
+                                    </div>
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='manageCandidates'>
+                                    <div className="flex flex-row items-center gap-2">
+                                        <FaUserCheck /> Manage Candidates
+                                    </div>
+                                </NavLink>
+                            </li>
                         </>
                     }
 
 
-                    <li><NavLink to='/'>Back to Home</NavLink></li>
-                    <li><button onClick={handleLogOut}>Signout</button></li>
+                    <li>
+                        <NavLink to='/'>
+                            <div className="flex flex-row items-center gap-2">
+                                <FaHome /> Back to Home
+                            </div>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <button onClick={handleLogOut}>
+                            <div className="flex flex-row items-center gap-2">
+                                <FaSignOutAlt /> Signout
+                            </div>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
