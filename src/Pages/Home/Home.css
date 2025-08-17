@@ -1,0 +1,6 @@
+.headerSectionBG{
+    background-image: url('../../assets/headerbg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
