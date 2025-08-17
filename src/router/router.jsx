@@ -30,9 +30,11 @@ import Payment from '../Pages/Dashboard/Payment/Payment'
 import GuideRoute from "../routes/GuideRoute";
 import AdminRoute from "../routes/AdminRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import  Forbidden from '../Pages/Forbidden/Forbidden'
+import Forbidden from '../Pages/Forbidden/Forbidden'
 import Loading from "../Components/Loading";
 import StoryDetails from "../Pages/StoryDetails/StoryDetails";
+import OverviewAdmin from "../Pages/Dashboard/Overview/OverviewAdmin";
+import OverviewUser from "../Pages/Dashboard/Overview/OverviewUser";
 
 const router = createBrowserRouter([
     {
@@ -99,7 +101,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/storyDetails/:id',
-                loader: ({params}) =>fetch(`https://tour-nest-server.vercel.app/storyDetails/${params.id}`),
+                loader: ({ params }) => fetch(`https://tour-nest-server.vercel.app/storyDetails/${params.id}`),
                 element: <StoryDetails></StoryDetails>
             }
 
@@ -114,6 +116,19 @@ const router = createBrowserRouter([
             {
                 index: 'manageProfile',
                 element: <ManageProfile></ManageProfile>
+
+            },
+            {
+                path: 'OverviewUser',
+                element: <OverviewUser></OverviewUser>
+            },
+            {
+                path: 'OverviewAdmin',
+                element: <AdminRoute><OverviewAdmin></OverviewAdmin></AdminRoute>
+            },
+            {
+                path: 'OverviewAdmin',
+                element: <AdminRoute><OverviewAdmin></OverviewAdmin></AdminRoute>
             },
             {
                 path: 'myBookings',
